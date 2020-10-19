@@ -29,13 +29,13 @@ h3 {
 }
 
 p1 {
-		colour:slategrey;
+		color:slategrey;
 		font-family: Helvetica, Arial, "sans-serif";
 		font-size:12pt;
 }
 
 p2 {
-		colour:back;
+		color:back;
 		font-family: Helvetica, Arial, "sans-serif";
 		font-size:8pt;
 }
