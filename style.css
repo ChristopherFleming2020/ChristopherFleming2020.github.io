@@ -5,13 +5,6 @@ header {
 	text-align: center
 }
 
-body {
-	width: 1200 px;
-	font-family: Helvetica, Arial, "sans-serif";
-	color: pink;
-}
-
- 
 main {
 	background-color: cadetblue;
 	padding: 1em;
