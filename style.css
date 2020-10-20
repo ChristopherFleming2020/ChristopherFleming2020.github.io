@@ -65,6 +65,6 @@ topnav, a {
   color: black;
 }
 .topnav a.active {
-  background-color: pink;
+  background-color: black;
   color: white;
 }
