@@ -1,10 +1,17 @@
-
+/* this was sourced from the HTML and CSS textbook */
 header {
 	padding: 3em;
 	background-color: aliceblue;
 	text-align: center
 }
 
+body {
+	width: 1200 px;
+	font-family: Helvetica, Arial, "sans-serif";
+	color: pink;
+}
+
+ 
 main {
 	background-color: cadetblue;
 	padding: 1em;
@@ -29,7 +36,7 @@ h3 {
 }
 
 p1 {
-		color:slategrey;
+		color:black;
 		font-family: Helvetica, Arial, "sans-serif";
 		font-size:12pt;
 }
@@ -40,6 +47,12 @@ p2 {
 		font-size:8pt;
 }
 
+li {
+	color:black;
+	font-family: Helvetica, Arial, "sans-serif";
+	font-size:12pt;
+	padding
+}
 topnav, a {
 	float: left;
 	text-align: center;
@@ -48,4 +61,18 @@ topnav, a {
 	font-size: 12pt;
 	padding: 3em;
 	text-align: center;
+}  
+/* this and donwn was sourced from W3schools */ 
+.topnav {
+  overflow: hidden;
+  background-color: yellow;
+}
+
+.topnav a:hover {
+  background-color: red;
+  color: black;
+}
+.topnav a.active {
+  background-color: pink;
+  color: white;
 }
