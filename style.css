@@ -57,11 +57,11 @@ topnav, a {
 /* this and donwn was sourced from W3schools */ 
 .topnav {
   overflow: hidden;
-  background-color: yellow;
+  background-color: slategrey;
 }
 
 .topnav a:hover {
-  background-color: red;
+  background-color: white;
   color: black;
 }
 .topnav a.active {
