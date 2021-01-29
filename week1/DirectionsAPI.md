@@ -1,12 +1,13 @@
 # Directions API Tutorial
-   This example uses the Google Maps Directions API to show directions between the Tokyo University of Technology and nearby Naganuma Park via bicycle.
+   This example uses the Google Maps Directions API to show directions of a certain student if the ski hills were open on a friday night
+   The information was gathered from https://developers.google.com/maps/documentation/directions/overview
 
 # URL Parameters
-   * Origin: Tokyo University of Technology
-   * Waypoint: 7-Eleven
-   * Destination: Naganuma Park
-   * Mode: Bicycling
-   * Language: Japanese
+   * Origin: The Blue Mountains
+   * Waypoint: LCBO
+   * Destination: Flesherton
+   * Mode: Driving
+   * Language: English
 
 # Vaid URL
 https://maps.googleapis.com/maps/api/directions/json?origin=place_id:ChIJ8Zg9vTE0K00RWQglliSdZzs&destination=place_id:ChIJJSPdLxk8KogRDLUASga0neY&waypoints=place_id:ChIJ92ziadt7KogRCIEuU5Zpj8o&mode=driving&language=en&key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k
