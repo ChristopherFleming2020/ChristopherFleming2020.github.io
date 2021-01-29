@@ -1,4 +1,4 @@
-```
+```json
 {
    "geocoded_waypoints" : [
       {
