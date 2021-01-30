@@ -9,30 +9,13 @@ While messing around with the Places API, I discovered that we can use the URL t
 hours of operation, the phone number, and a URL link to google maps. 
 
 ## Here is a URL:
-
-https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJq6p6ZumM1YkRwlenRs5y5SY&fields=name,rating,type,geometry,opening_hours,url,formatted_phone_number&key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k
+https://maps.googleapis.com/maps/api/place/details/json?place_id=ChIJq6p6ZumM1YkRwlenRs5y5SY&fields=name,rating,type,opening_hours,url,formatted_phone_number&key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k
 
 ```json
 {
    "html_attributions" : [],
    "result" : {
       "formatted_phone_number" : "(705) 324-9144",
-      "geometry" : {
-         "location" : {
-            "lat" : 44.34101889999999,
-            "lng" : -78.7412238
-         },
-         "viewport" : {
-            "northeast" : {
-               "lat" : 44.34240168029149,
-               "lng" : -78.74009216970849
-            },
-            "southwest" : {
-               "lat" : 44.3397037197085,
-               "lng" : -78.7427901302915
-            }
-         }
-      },
       "name" : "Fleming College - Frost Campus",
       "opening_hours" : {
          "open_now" : false,
