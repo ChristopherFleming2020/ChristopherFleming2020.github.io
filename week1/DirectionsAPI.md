@@ -1,6 +1,7 @@
 # Directions API Tutorial
    This example uses the Google Maps Directions API to show directions of a certain student if the ski hills were open on a friday night
    The information was gathered from https://developers.google.com/maps/documentation/directions/overview
+   To obtain the Place ID finder I used https://developers.google.com/maps/documentation/javascript/examples/places-placeid-finder 
 
 # URL Parameters
    * Origin: The Blue Mountains
