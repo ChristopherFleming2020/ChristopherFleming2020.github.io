@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Add Map</title>
+    <title>Adding a point to a map</title>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k&callback=initMap&libraries=&v=weekly"
       defer
@@ -19,20 +19,26 @@
       // Initialize and add the map
       function initMap() {
         // The location of Uluru
-        const uluru = { lat: 45.252653, lng: -81.664375 };
+        const Tobermory = { lat: 45.258089, lng: -81.664628 };
         // The map, centered at Uluru
         const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 4,
-          center: uluru,
+          zoom: 8,
+          center: Tobermory,
         });
         // The marker, positioned at Uluru
         const marker = new google.maps.Marker({
-          position: uluru,
+          position: Tobermory,
           map: map,
         });
       }
     </script>
   </head>
+  <body>
+    <h3>I choose to put a marker on Tobermory, Ontario.</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
   <body>
     <h3>My Google Maps Demo</h3>
     <!--The div element for the map -->
