@@ -7,25 +7,42 @@
       defer
     ></script>
     <style type="text/css">
-      /* Set the size of the div element that contains the map */
       #map {
-        height: 400px;
-        /* The height is 400 pixels */
+        height: 680px;
         width: 100%;
-        /* The width is the width of the web page */
+      }
+      body{
+        background-color: #497544;
+        font-family: Arial, Helvetica, sans-serif;
+        margin-top: 0px;
+        margin: 0 10%;
+        text-align: center;
+      }
+      header {
+          background-color: #4d6a79;
+      }
+      h1{
+          text-align: center;
+          margin-top: 0px;
+      }
+      h2{
+        background-color: #4d6a79;
+        margin-bottom: 0%;
+        padding-top: 5pt;
+        padding-bottom: 5pt;
       }
     </style>
     <script>
       // Initialize and add the map
       function initMap() {
-        // The location of Uluru
+        // The location of TObermory
         const Tobermory = { lat: 45.258089, lng: -81.664628 };
-        // The map, centered at Uluru
+        // The map, centered at Tobermory
         const map = new google.maps.Map(document.getElementById("map"), {
           zoom: 8,
           center: Tobermory,
         });
-        // The marker, positioned at Uluru
+        // I changed the marker to Tobermory
         const marker = new google.maps.Marker({
           position: Tobermory,
           map: map,
@@ -34,13 +51,16 @@
     </script>
   </head>
   <body>
-    <h3>I choose to put a marker on Tobermory, Ontario.</h3>
+    <header>
+      <h1>Tobermory, Ontario.</h1>
+    </header>
+    <h2>Tobermory, Ontario.</h2>
     <!--The div element for the map -->
     <div id="map"></div>
   </body>
 </html>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <p>For this google API tutorial I choose to put Tobermory, Ontario onto a map.</p>
     <!--The div element for the map -->
     <div id="map"></div>
   </body>
