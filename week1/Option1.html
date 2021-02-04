@@ -24,6 +24,7 @@
       h1{
           text-align: center;
           margin-top: 0px;
+          margin-bottom: 0pt;
       }
       h2{
         background-color: #4d6a79;
@@ -36,23 +37,48 @@
       // Initialize and add the map How to add multiple markers was sourced from - https://stackoverflow.com/questions/3059044/google-maps-js-api-v3-simple-multiple-marker-example
       function initMap() {
         var locations = [
-      ['Flesherton', 44.264093, -80.550239 ],
-      ['Sault Ste. Marie', 46.548835, -84.315650 ],
-      ['Thunder Bay', 48.394605, -89.265009 ],
-      ['Winnipeg', 49.911469, -97.126574],
-      ['Red Deer', 52.326258, -113.814176],
-      ['Banff', 51.192364, -115.560345],
-      ['Jasper', 52.880184, -118.075591],
-      ['Kelowna', 49.879592, -119.507863],
-      ['Vancouver', 49.299546, -123.115149],
-      ['Whistler', 50.122210, -122.957050],
+      ['Flesherton, Start Point', 44.264093, -80.550239 ],
+      ['Sault Ste. Marie, Visit People', 46.548835, -84.315650 ],
+      ['Thunder Bay. Enjoy the Views', 48.394605, -89.265009 ],
+      ['Winnipeg, Visit People', 49.911469, -97.126574],
+      ['Red Deer, Visit People', 52.326258, -113.814176],
+      ['Banff. Explore and Enjoy some views', 51.192364, -115.560345],
+      ['Jasper. More Exploring, more views', 52.880184, -118.075591],
+      ['Kelowna. Visit some people', 49.879592, -119.507863],
+      ['Vancouver. More people to see', 49.299546, -123.115149],
+      ['Whistler, End Point', 50.122210, -122.957050],
     ];
-
+		// https://developers.google.com/maps/documentation/javascript/examples/polyline-simple Was relied on to figure out how to add a route path onto the map.
     var map = new google.maps.Map(document.getElementById('map'), {
       zoom: 4,
       center: new google.maps.LatLng(53.5876, -101.6267),
       mapTypeId: google.maps.MapTypeId.ROADMAP
     });
+        const flightPlanCoordinates = [
+          { lat: 44.264093, lng: -80.550239 },
+		  { lat: 44.657573, lng: -79.449764 },
+		  { lat: 46.444035, lng: -80.901629 },
+          { lat: 46.548835, lng: -84.315650 },
+		  { lat: 48.599195, lng: -85.275136 },
+		  { lat: 49.055774, lng: -88.176178 },
+          { lat: 48.394605, lng: -89.265009 },
+          { lat: 49.911469, lng: -97.126574 },
+		  { lat: 52.326258, lng: -113.814176 },
+          { lat: 51.192364, lng: -115.560345 },
+		  { lat:52.880184, lng: -118.075591 },
+		  { lat: 49.879592, lng: -119.507863 },
+		  { lat: 49.299546, lng: -123.115149 },
+		  { lat: 50.125639, lng: -122.958098 },
+
+        ];
+        const flightPath = new google.maps.Polyline({
+          path: flightPlanCoordinates,
+          geodesic: true,
+          strokeColor: "#FF0000",
+          strokeOpacity: 1.0,
+          strokeWeight: 2,
+        });
+        flightPath.setMap(map);
 
     var infowindow = new google.maps.InfoWindow();
 
