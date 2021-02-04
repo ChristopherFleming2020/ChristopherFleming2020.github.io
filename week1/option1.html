@@ -1,0 +1,68 @@
+<html>
+  <head>
+    <title>Earthquakes From USGS Data: Fancy HeatMap</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script
+defer
+src="https://maps.googleapis.com/maps/api/js?key
+=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k&libraries=visualization&callback=initMap">
+</script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 85%;
+        border-radius: 3pt;
+      }
+      body {
+        height: 100%;
+        margin: 0;
+        padding: 10;
+        font-family: Arial, Helvetica, sans-serif;
+        background-color: #747473;
+      }
+      h3{
+        text-align: center;
+      }
+    </style>
+    <script>
+// create location, label, and image link lists for marker creation - to challenge myself
+var locations = [
+ { lat: 63.069, lng: -151.007 },
+ { lat: -32.641, lng: -70.021 },
+ { lat: 43.347, lng: 42.441 },
+ { lat: -3.071, lng: 37.358 },
+ { lat: -78.529, lng: -85.632 },
+ { lat: 27.980, lng: 86.920 },
+ { lat: -36.456, lng: 148.261 },
+  	];
+var labels = ['Denali', 'Aconcagua', 'Elbrus', 'Kilimanjaro', 'Vinson Massif', 'Everest', 'Kosciuszko',
+      	];
+var images = ['Denali.jpg','Aconcagua.jpg','Elbrus.jpg','Kilimanjaro.jpg','VinsonMassif.jpg','Everest.jpg','Kosciuszko.jpg'
+	];
+
+//create map 
+  function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 2,
+    center: {lat: 0, lng: 0},
+    mapTypeId: "satellite",
+  });
+
+    setMarkers(map,locations)
+
+  }
+
+    </script>
+  </head>
+  <body>
+    <h3>The Google Maps Demo Tutorial Part 3c: ~*Fancy*~ HeatMap</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>  
+     <p>This section of the Demo shows us EarthQuake Data, sourced from USGS.
+       I moved where the map was center for a better visual appearance.
+     </p>
+  </body>
+</html>
