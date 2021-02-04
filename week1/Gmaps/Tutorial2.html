@@ -1,15 +1,36 @@
-function initMap(): void {
-  const map = new google.maps.Map(
-    document.getElementById("map") as HTMLElement,
-    {
-      zoom: 3,
-      center: { lat: -28.024, lng: 140.887 },
-    }
-  );
 
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Australia Point Map</title>
+    <script
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k&callback=initMap&libraries=&v=weekly"
+      defer
+    ></script>
+    <script src="https://unpkg.com/@googlemaps/markerclustererplus/dist/index.min.js"></script>
+    <style type="text/css">
+      /* Set the size of the div element that contains the map */
+      #map {
+        height: 75%;
+        width: 90%;
+        
+      }
+      li {list-style-type: none;}
+      html,
+      body {
+        height: 100%;
+        margin: 15;
+        padding: 5;
+      }
+    </style>
+    <script>
+    function initMap() {
+  const map = new google.maps.Map(document.getElementById("map"), {
+    zoom: 3,
+    center: { lat: -28.024, lng: 140.887 },
+  });
   // Create an array of alphabetical characters used to label the markers.
   const labels = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-
   // Add some markers to the map.
   // Note: The code uses the JavaScript Array.prototype.map() method to
   // create an array of markers based on a given "locations" array.
@@ -20,14 +41,15 @@ function initMap(): void {
       label: labels[i % labels.length],
     });
   });
-
-  // Add a marker clusterer to manage the markers.
-  // @ts-ignore MarkerClusterer defined via script
-  new MarkerClusterer(map, markers, {
-    imagePath:
-      "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
-  });
+//   // Add a marker clusterer to manage the markers.
+//   new MarkerClusterer(map, markers, {
+//     imagePath:
+//       "https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m",
+//   });
+var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'ChristopherFleming2020.github.io/Images/MarkerClusters/m'});
 }
+
 const locations = [
   { lat: -31.56391, lng: 147.154312 },
   { lat: -33.718234, lng: 150.363181 },
@@ -53,3 +75,11 @@ const locations = [
   { lat: -42.735258, lng: 147.438 },
   { lat: -43.999792, lng: 170.463352 },
 ];
+    </script>
+  </head>
+  <body>
+    <h3>My Google Maps Demo</h3>
+    <!--The div element for the map -->
+    <div id="map"></div>
+  </body>
+</html>
