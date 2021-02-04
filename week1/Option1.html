@@ -35,18 +35,42 @@
     <script>
       // Initialize and add the map
       function initMap() {
-        // The location of TObermory
-        const Tobermory = { lat: 45.258089, lng: -81.664628 };
-        // The map, centered at Tobermory
-        const map = new google.maps.Map(document.getElementById("map"), {
-          zoom: 8,
-          center: Tobermory,
-        });
-        // I changed the marker to Tobermory
-        const marker = new google.maps.Marker({
-          position: Tobermory,
-          map: map,
-        });
+        var locations = [
+      ['Flesherton', 44.264093, -80.550239 ],
+      ['Sault Ste. Marie', 46.548835, -84.315650 ],
+      ['Thunder Bay', 48.394605, -89.265009 ],
+      ['Winnipeg', 49.911469, -97.126574],
+      ['Red Deer', 52.326258, -113.814176],
+      ['Banff', 51.192364, -115.560345],
+      ['Jasper', 52.880184, -118.075591],
+      ['Kelowna', 49.879592, -119.507863],
+      ['Vancouver', 49.299546, -123.115149],
+      ['Whistler', 50.122210, -122.957050],
+    ];
+
+    var map = new google.maps.Map(document.getElementById('map'), {
+      zoom: 4,
+      center: new google.maps.LatLng(53.5876, -101.6267),
+      mapTypeId: google.maps.MapTypeId.ROADMAP
+    });
+
+    var infowindow = new google.maps.InfoWindow();
+
+    var marker, i;
+
+    for (i = 0; i < locations.length; i++) {  
+      marker = new google.maps.Marker({
+        position: new google.maps.LatLng(locations[i][1], locations[i][2]),
+        map: map
+      });
+
+      google.maps.event.addListener(marker, 'click', (function(marker, i) {
+        return function() {
+          infowindow.setContent(locations[i][0]);
+          infowindow.open(map, marker);
+        }
+      })(marker, i));
+    }
       }
     </script>
   </head>
@@ -54,7 +78,6 @@
     <header>
       <h1>Tobermory, Ontario.</h1>
     </header>
-    <h2>Tobermory, Ontario.</h2>
     <!--The div element for the map -->
     <div id="map"></div>
   </body>
