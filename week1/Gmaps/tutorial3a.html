@@ -32,7 +32,7 @@ src="https://maps.googleapis.com/maps/api/js?key
 
 function initMap() {
   map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 3,
+    zoom: 2,
     center: new google.maps.LatLng(33.599440, -25.520420),
     mapTypeId: "terrain",
   });
@@ -64,6 +64,8 @@ const eqfeed_callback = function (results) {
     <h3>The Google Maps Demo Tutorial Part 3a</h3>
     <!--The div element for the map -->
     <div id="map"></div>  
-     <p>This section of the Demo shows us EarthQuake Data, sourced from USGS</p>
+     <p>This section of the Demo shows us EarthQuake Data, sourced from USGS.
+       I moved where the map was center for a better visual appearance.
+     </p>
   </body>
 </html>
