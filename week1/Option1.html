@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Adding a point to a map</title>
+    <title>A Drive Across Canada</title>
     <script
       src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDWPklzn-CLNUL_DtbOt4j2cEZ0vnk085k&callback=initMap&libraries=&v=weekly"
       defer
@@ -10,27 +10,24 @@
       #map {
         height: 680px;
         width: 100%;
+        border-radius: 3pt;
+        border-style: solid;
       }
       body{
-        background-color: #497544;
+        background-color: #6e946a;
         font-family: Arial, Helvetica, sans-serif;
-        margin-top: 0px;
-        margin: 0 10%;
-        text-align: center;
+        margin: 0 5%;
       }
       header {
-          background-color: #4d6a79;
+          background-color: #849eaa;
       }
       h1{
           text-align: center;
           margin-top: 0px;
           margin-bottom: 0pt;
       }
-      h2{
-        background-color: #4d6a79;
-        margin-bottom: 0%;
-        padding-top: 5pt;
-        padding-bottom: 5pt;
+      p{
+        margin-top: 5pt;
       }
     </style>
     <script>
@@ -102,15 +99,17 @@
   </head>
   <body>
     <header>
-      <h1>My Drive across Canada</h1>
+      <h1>A Purposed Trip Across Canada</h1>
     </header>
     <!--The div element for the map -->
     <div id="map"></div>
   </body>
 </html>
   <body>
-    <p>The route I've planned to drive along, stopping along the way to visit Friends and some scenic views.</p>
+    <div><p>During my undergrad, I kept arriving at the idea that I would drive across the country and explore serval 
+      different areas around Canada. Either Spending a night or a few days at each point, this is the route I've planned to drive along.
+    With the spring of 2020 being a bad time to travel, I decided to maybe put it off till July of 2021.</p>
+  </div>
     <!--The div element for the map -->
-    <div id="map"></div>
   </body>
 </html>
