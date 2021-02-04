@@ -30,15 +30,19 @@ src="https://maps.googleapis.com/maps/api/js?key
     <script>
 // create location, label, and image link lists for marker creation - to challenge myself
 var locations = [
- { lat: 63.069, lng: -151.007 },
- { lat: -32.641, lng: -70.021 },
- { lat: 43.347, lng: 42.441 },
- { lat: -3.071, lng: 37.358 },
- { lat: -78.529, lng: -85.632 },
- { lat: 27.980, lng: 86.920 },
- { lat: -36.456, lng: 148.261 },
+ { lat: 44.264093, lng: -80.550239 },
+ { lat: 46.548835, lng: -84.315650 },
+ { lat: 48.394605, lng: -89.265009},
+ { lat: 49.911469, lng: -97.126574 },
+ { lat: 52.326258, lng: -113.814176 },
+ { lat: 51.192364, lng: -115.560345 },
+ { lat: 52.880184, lng: -118.075591 },
+ { lat: 49.879592, lng: -119.507863 },
+ { lat: 49.299546, lng: -123.115149 },
+ { lat: 50.122210, lng: -122.957050 },
   	];
-var labels = ['Denali', 'Aconcagua', 'Elbrus', 'Kilimanjaro', 'Vinson Massif', 'Everest', 'Kosciuszko',
+var labels = ['Flesherton', 'Sault Ste. Marie', 'Thunder Bay', 'Winnipeg', 'Red Deer', 'Banff', 'Jasper', 'Kelowna',
+'Vancouver','Whistler'
       	];
 var images = ['Denali.jpg','Aconcagua.jpg','Elbrus.jpg','Kilimanjaro.jpg','VinsonMassif.jpg','Everest.jpg','Kosciuszko.jpg'
 	];
@@ -46,15 +50,48 @@ var images = ['Denali.jpg','Aconcagua.jpg','Elbrus.jpg','Kilimanjaro.jpg','Vinso
 //create map 
   function initMap() {
   const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 2,
-    center: {lat: 0, lng: 0},
-    mapTypeId: "satellite",
+    zoom: 4,
+    center: {lat: 53.5876, lng: -101.6267},
+    mapTypeId: "roadmap",
   });
 
     setMarkers(map,locations)
 
   }
+// create markers using locations and labels, and create an image link for use in info window
 
+function setMarkers(map,locations){
+
+var marker, i
+
+for (i = 0; i < locations.length; i++)
+{  
+
+var loc = locations[i]
+var tit = labels[i]
+var pic = "<img src='"+images[i]+"' alt='"+images[i]+"' style='width:200px;height:120px;'>"
+
+var marker = new google.maps.Marker({  
+    map: map, title: tit , position: loc
+  });
+  
+
+// create content for info window and addListener to initiate window on marker click
+
+  var content = "<h3>"+tit+"</h1><div>"+pic+"</div>"
+
+var infowindow = new google.maps.InfoWindow()
+
+google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+  return function() {
+     infowindow.setContent(content);
+     infowindow.open(map,marker);
+map.setCenter(marker.getPosition())
+  };
+})(marker,content,infowindow)); 
+
+}
+}
     </script>
   </head>
   <body>
