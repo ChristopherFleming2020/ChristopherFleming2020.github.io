@@ -11,6 +11,7 @@
       margin: 0;
       height: 100%;
       width: 100%;
+      font-family: Arial, sans-serif;
     }
   </style>
   <link rel="stylesheet" href="https://js.arcgis.com/4.18/esri/themes/light/main.css">
@@ -35,8 +36,8 @@
 
   const view = new MapView({
     map: map,
-    center: [-78.400,44.3039], //Longitude, latitude
-    zoom: 11,
+    center: [-78.342,44.3069], //Longitude, latitude
+    zoom: 14,
     container: "viewDiv"
  });
 
@@ -50,7 +51,7 @@
  };
  const simpleMarkerSymbol = {
     type: "simple-marker",
-    color: [226, 119, 40],  // Orange
+    color: [237, 27, 36],  // Orange - Changing this to a nice red colour, to match the them.
     outline: {
         color: [255, 255, 255], // White
         width: 1
@@ -83,7 +84,7 @@
 
  const simpleFillSymbol = {
     type: "simple-fill",
-    color: [227, 139, 79, 0.8],  // Orange, opacity 80%
+    color: [237, 27, 36, 0.8],  // Orange, opacity 80%
     outline: {
         color: [255, 255, 255],
         width: 1
@@ -113,6 +114,7 @@
 </script>
 </head>
 <body>
+   <h2>A heart over the city we meet in, and location of our first date.</h2>
   <div id="viewDiv"></div>
 </body>
 </html>
