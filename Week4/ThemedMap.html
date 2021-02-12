@@ -35,22 +35,22 @@
 
   const view = new MapView({
     map: map,
-    center: [-118.80500,34.02700], //Longitude, latitude
-    zoom: 13,
+    center: [-78.428,44.3039], //Longitude, latitude
+    zoom: 11,
     container: "viewDiv"
  });
 
  const graphicsLayer = new GraphicsLayer();
  map.add(graphicsLayer);
 
- const point = { //Create a point
+ const point = { //Create a point - Lat and Long of my partners and I first coffee date
     type: "point",
-    longitude: -118.80657463861,
-    latitude: 34.0005930608889
+    longitude: 78.322764,
+    latitude: 44.305481
  };
  const simpleMarkerSymbol = {
     type: "simple-marker",
-    color: [226, 119, 40],  // Orange
+    color: [226, 0, 0],  // Orange - I'm Changing this to red, because Valentines theme.
     outline: {
         color: [255, 255, 255], // White
         width: 1
@@ -63,36 +63,16 @@
  });
  graphicsLayer.add(pointGraphic);
 
-    // Create a line geometry
- const polyline = {
-    type: "polyline",
-    paths: [
-        [-118.821527826096, 34.0139576938577], //Longitude, latitude
-        [-118.814893761649, 34.0080602407843], //Longitude, latitude
-        [-118.808878330345, 34.0016642996246]  //Longitude, latitude
-    ]
- };
- const simpleLineSymbol = {
-    type: "simple-line",
-    color: [226, 119, 40], // Orange
-    width: 2
- };
-
- const polylineGraphic = new Graphic({
-    geometry: polyline,
-    symbol: simpleLineSymbol
- });
- graphicsLayer.add(polylineGraphic);
-
  // Create a polygon geometry
  const polygon = {
     type: "polygon",
     rings: [
-        [-118.818984489994, 34.0137559967283], //Longitude, latitude
-        [-118.806796597377, 34.0215816298725], //Longitude, latitude
-        [-118.791432890735, 34.0163883241613], //Longitude, latitude
-        [-118.79596686535, 34.008564864635],   //Longitude, latitude
-        [-118.808558110679, 34.0035027131376]  //Longitude, latitude
+        [-78.381327, 44.310459], //Longitude, latitude
+        [ -78.368931, 44.321099], //Longitude, latitude
+        [-78.351884, 44.324941], //Longitude, latitude
+        [-78.345221, 44.320200],   //Longitude, latitude
+        [-78.362304, 44.296093]  //Longitude, latitude
+        [-78.387293, 44.26416]  //Longitude, latitude
     ]
  };
 
