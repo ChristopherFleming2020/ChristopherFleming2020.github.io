@@ -6,11 +6,14 @@
   <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>ArcGIS API for JavaScript Tutorials: Add a point, line, and polygon</title>
   <style>
-    html, body, h2, #viewDiv {
+    html, #viewDiv {
       padding: 0;
       margin: 0;
       height: 100%;
       width: 100%;
+    }
+    
+    body, h2 {
       font-family: Arial, sans-serif;
       margin-top: 1pt;
       margin-bottom: 1pt;
@@ -40,7 +43,7 @@
 
   const view = new MapView({
     map: map,
-    center: [78.351863,44.293326], //Longitude, latitude
+    center: [-78.351863,44.293326], //Longitude, latitude
     zoom: 12, // Yup, 12 works
     container: "viewDiv"
  });
