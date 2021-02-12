@@ -35,7 +35,7 @@
 
   const view = new MapView({
     map: map,
-    center: [-78.428,44.3039], //Longitude, latitude
+    center: [-78.400,44.3039], //Longitude, latitude
     zoom: 11,
     container: "viewDiv"
  });
@@ -43,14 +43,14 @@
  const graphicsLayer = new GraphicsLayer();
  map.add(graphicsLayer);
 
- const point = { //Create a point - Lat and Long of my partners and I first coffee date
+ const point = { //Create a point
     type: "point",
-    longitude: 78.322764,
-    latitude: 44.305481
+    longitude: -118.80657463861,
+    latitude: 34.0005930608889
  };
  const simpleMarkerSymbol = {
     type: "simple-marker",
-    color: [226, 0, 0],  // Orange - I'm Changing this to red, because Valentines theme.
+    color: [226, 119, 40],  // Orange
     outline: {
         color: [255, 255, 255], // White
         width: 1
@@ -63,7 +63,7 @@
  });
  graphicsLayer.add(pointGraphic);
 
- // Create a polygon geometry
+ // Create a polygon geometry I'm trying to make a heart  shape from this polygon. 
  const polygon = {
     type: "polygon",
     rings: [
@@ -72,7 +72,12 @@
         [-78.351884, 44.324941], //Longitude, latitude
         [-78.345221, 44.320200],   //Longitude, latitude
         [-78.362304, 44.296093],  //Longitude, latitude
-        [-78.387293, 44.26416]  //Longitude, latitude
+        [-78.338037, 44.30514],  //Longitude, latitude
+        [-78.387293, 44.26416],  //Longitude, latitude
+        [-78.429492, 44.310872],  //Longitude, latitude
+        [-78.407844, 44.323620],  //Longitude, latitude
+        [-78.391906, 44.319264],  //Longitude, latitude
+        [-78.387765, 44.309895],  //Longitude, latitude
     ]
  };
 
