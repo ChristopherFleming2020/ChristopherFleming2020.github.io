@@ -60,8 +60,7 @@
         "esri/widgets/Legend",
       ], function (Map, MapView, FeatureLayer, Search, Legend) {
         var map = new Map({
-          basemap: "DarkGray",
-          basemap: "DarkGray",
+          basemap: "gray",
         });
 
         // Using map view module to display instead of WebMap
@@ -69,8 +68,7 @@
           container: "viewDiv",
           map: map,
 
-          // Extent changed as a result of reprojection to CRS Lambert to Web Merc
-          // Used http://bboxfinder.com to find extent
+          // From going from ArcPro to Arc Server, the extent of the map changed from Lambert to Web Mercator
           extent: {
             // autocasts as new Extent()
             xmin: -15000000,
@@ -82,7 +80,7 @@
         });
 
         // Adds the search widget to the top right corner of the view
-        view.ui.add(new Search({ view: view }), "top-left");
+        view.ui.add(new Search({ view: view }), "top-right");
 
         // Despite not having a legend in web map view, this turned out okay
         view.ui.add(new Legend({ view: view }), "bottom-left");
@@ -109,7 +107,7 @@
         // attemping to add map layer from Luna
         var featureLayer = new FeatureLayer({
           url:
-            "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab1/HoweCanada/MapServer/0",
+            "https://luna.flemingcollege.ca/arcgis/rest/services/Geom99lab2/chrweCanada/MapServer/0",
           labelingInfo: [labelClass],
         });
 
