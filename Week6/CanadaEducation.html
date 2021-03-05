@@ -1,48 +1,40 @@
 <html>
   <head>
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="initial-scale=1, maximum-scale=1, user-scalable=no"
-    />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
-      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
-      crossorigin="anonymous"
-    />
     <title>Canadian Province Names</title>
 
     <style>
       html,
       body,
       #viewDiv {
-        padding: 0;
         margin: 0;
         height: 90%;
         width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      body{
+        font-family: Arial, Helvetica, sans-serif;
+      }
+      h1{
+        text-align: center;
+        margin-top: 0px;
+        margin-bottom: 0px;
+        background-color: rgba(180, 43, 39, 0.555);
       }
 
       p {
-        padding-left: 50px;
-        padding-right: 50px;
-        padding-top: 20px;
+        text-align: left;
+        padding-left: 30px;
+        padding-right: 30px;
+        padding-top: 10px;
+        padding-bottom: 10px;
         margin-bottom: 0px;
+        background-color: rgba(180, 43, 39, 0.555);
+      }
+      footer {
+        padding-top: 40pt;
       }
 
-      @media only screen and (min-width: 800px) {
-        div.content {
-          max-width: 1080px;
-          margin: 0 auto !important;
-          float: none !important;
-        }
-
-        #viewDiv {
-          max-width: 90%;
-          /* display: block; */
-          margin-left: auto;
-          margin-right: auto;
-        }
     </style>
 
     <link
@@ -57,10 +49,9 @@
         "esri/views/MapView",
         "esri/layers/FeatureLayer",
         "esri/widgets/Search",
-        "esri/widgets/Legend",
-      ], function (Map, MapView, FeatureLayer, Search, Legend) {
+      ], function (Map, MapView, FeatureLayer, Search) {
         var map = new Map({
-          basemap: "gray",
+          basemap: "streets",
         });
 
         // Using map view module to display instead of WebMap
@@ -79,11 +70,9 @@
           },
         });
 
-        // Adds the search widget to the top right corner of the view
+        // https://developers.arcgis.com/javascript/latest/search-for-an-address/
+        // Above is the source to where I figured out how to include a search bar. 
         view.ui.add(new Search({ view: view }), "top-right");
-
-        // Despite not having a legend in web map view, this turned out okay
-        view.ui.add(new Legend({ view: view }), "bottom-left");
 
         const labelClass = {
           // autocasts as new LabelClass()
@@ -103,7 +92,6 @@
           },
         };
 
-
         // attemping to add map layer from Luna
         var featureLayer = new FeatureLayer({
           url:
@@ -116,17 +104,20 @@
     </script>
   </head>
   <body>
-	<div> 
-	<h1> Map Of Canada</h1>
-	</div>
+    <div> 
+      <h1> Map Of Canada</h1>
+    </div>
 
     <div id="viewDiv"></div>
 
-    <div class="content">
-      <p>
-        Coast to coast, its a large one. 80 hour drive, plently of different biomes and great people.
-      </p>
-    </div>
+      <div>
+        <p>
+          Coast to coast, its a large one. 80 hour drive, plently of different biomes and great people. This map is a tool that will allow you to search locations throughout Canada
+          Try using the Search Bar in the top Right to explore, or zoom in. <br>
+          <br>
+          For information about Canada, visit this link:<a href="https://www.youtube.com/watch?v=vDYXbUrcT7k"> 101 Fun Facts!</a>
+        </p>
+      </div>
 	<footer>
 	Made By: Christopher Webb, 2021
 	</footer>
